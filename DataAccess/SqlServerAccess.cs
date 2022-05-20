@@ -11,7 +11,13 @@ namespace DataAccess
     public class SqlServerAccess
     {
 
-        public string MyConnectionString { get; set; }
+
+        public SqlServerAccess(string myConnectionString)
+        {
+            MyConnectionString = myConnectionString;
+        }
+
+         public string MyConnectionString { get; init; }
 
         public int SqlAccessConnect()
         {

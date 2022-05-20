@@ -9,8 +9,9 @@ namespace AFCEntral.Console
         {
             System.Console.WriteLine("Hello World!");
 
-            SqlServerAccess ssa = new SqlServerAccess();
-            ssa.MyConnectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = AFCentral; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+            var cs = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = AFCentral; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+
+            SqlServerAccess ssa = new SqlServerAccess(cs);
 
             var replyCount = ssa.SqlAccessConnect();
 
